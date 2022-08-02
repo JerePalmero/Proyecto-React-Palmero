@@ -1,10 +1,11 @@
  import logo from '../logo.png';
+import CartWidget from './CartWidget/CartWidget';
 
 function NavBar () {
     return( 
         <nav class="nav-cont">
             <div>
-            <img src={logo} alt="logo" class="logo-nav" width="150px"/>
+                <img src={logo} alt="logo" class="logo-nav" width="150px"/>
             </div>
             <ul class="cont-nav">
                 <li>
@@ -35,7 +36,7 @@ function NavBar () {
                     </a>
                 </li>
             </ul>
-      
+            <CartWidget/>
         </nav>
       
     

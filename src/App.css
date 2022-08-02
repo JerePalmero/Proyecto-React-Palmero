@@ -7,9 +7,6 @@ body {
   margin: 0;
   }
 
-
-
-
 .nav-cont, .nav-menu{
   display: flex;
   justify-content: space-around;

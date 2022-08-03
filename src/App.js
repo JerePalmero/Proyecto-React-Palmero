@@ -5,11 +5,15 @@ import ItemListContainer from './components/card/ItemListContainer';
 
 
 function App() {
+const data={
+  titulo: "Nuestros Viajes"
+};
+
   return (
-    <div className="App">
+    <div className="App"> 
       <header className="App-header">
         <NavBar/>
-        <ItemListContainer/>
+        <ItemListContainer data={data}/>
       </header>
     </div>
   );

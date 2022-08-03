@@ -1,10 +1,10 @@
 import React from "react";
 
-function ItemListContainer ()  {
+function ItemListContainer (props)  {
     
     
     return(
-        <h1>Nuestros Viajes</h1>
+        <h1>{props.data.titulo}</h1>
     )
 }
 export default ItemListContainer

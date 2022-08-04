@@ -2,6 +2,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/card/ItemListContainer';
+import ItemCount from './components/card/ItemCount';
 
 
 function App() {
@@ -15,6 +16,9 @@ const data={
         <NavBar/>
         <ItemListContainer data={data}/>
       </header>
+      <main className='main'>
+        <ItemCount initial={1} stock={10}/>
+      </main>
     </div>
   );
 }

@@ -1,0 +1,7 @@
+.btn{
+    padding: 5px 10px;
+    background-color: rgb(97, 150, 220);
+    border-radius: 5px;
+    max-height: 150px;
+    color: white;
+}

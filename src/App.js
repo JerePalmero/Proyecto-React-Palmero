@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemCount from './components/card/ItemCount';
-
+import ItemDetailContainer from "../src/components/ItemDietail/ItemDetailContainer"
 
 function App() {
 
@@ -12,9 +12,15 @@ function App() {
     <div className="App"> 
       <header className="App-header">
         <NavBar/>
+        <div><h1>NUESTROS VIAJES</h1> </div>
         
       </header>
-      <ItemListContainer/>
+     
+      <ItemDetailContainer item={"1"}/>
+     
+      
+
+
       <div className='cont'>
       <ItemCount initial={1} stock={10}/>
       </div>

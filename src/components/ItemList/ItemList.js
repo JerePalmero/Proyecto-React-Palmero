@@ -1,7 +1,7 @@
 import Card from "../card/Card"
 import getProducts from "../../Helpers/getProducts";
 import React, {useEffect, useState} from "react";
-
+import "./ItemListConteiner.css";
 
 export default function ItemList (){ 
     const [data, setData] = useState([]); 
@@ -12,7 +12,7 @@ export default function ItemList (){
             });
  }, []);
     return (
-<div>
+<div className="card-arm">
         {
             data.map((singleMovie)=> (
                 <Card 

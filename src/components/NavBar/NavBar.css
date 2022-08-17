@@ -1,0 +1,16 @@
+.nav-cont{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
+   
+    
+  padding: 0%;
+  margin-left: 15px;
+  align-items: center;
+  }
+
+  .cont-nav{
+    display: flex;
+    list-style: none;
+    width: 45%;
+  }

@@ -1,3 +1,4 @@
+import "./ItemListConteiner.css";
 
 
 import ItemList from "./ItemList";
@@ -9,10 +10,13 @@ import ItemList from "./ItemList";
         
     
     return(
+        
+       
         <div className="main">
-            <p>Nuestro Viajes</p>
-           
-            <ItemList/>
+            <div><h1>NUESTROS VIAJES</h1> </div>
+          
+           <div className="lista"><ItemList/></div>
+            
         </div>
         
 

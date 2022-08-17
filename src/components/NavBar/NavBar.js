@@ -1,5 +1,7 @@
- import logo from '../logo.png';
-import CartWidget from './CartWidget/CartWidget';
+ import logo from '../../../src/logo.png';
+import CartWidget from '../../components/CartWidget/CartWidget';
+import "./NavBar.css"
+
 
 function NavBar () {
     return( 

@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import "./ItemListConteiner.css";
 
 export default function ItemList (){ 
-    const [data, setData] = useState([]); 
+    const [data, setData] = useState([0]); 
 
         useEffect(()=> {
             getProducts().then((respuesta) => {

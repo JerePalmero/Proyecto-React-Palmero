@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemCount from './components/card/ItemCount';
 import ItemDetailContainer from "../src/components/ItemDietail/ItemDetailContainer"
+import dataProduct from './components/ItemList/Items';
 
 function App() {
 
@@ -15,8 +16,12 @@ function App() {
         <div><h1>NUESTROS VIAJES</h1> </div>
         
       </header>
-     
-      <ItemDetailContainer item={"1"}/>
+
+    <ItemListContainer/>
+    <ItemDetailContainer/>
+    
+
+      
      
       
 

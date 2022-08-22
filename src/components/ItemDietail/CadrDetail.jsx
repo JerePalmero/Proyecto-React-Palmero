@@ -1,9 +1,8 @@
 
 import "../card/Card.css";
 import Button from "../Button/Button";
-import dataProduct from "../ItemList/Items";
-
 export default function CardDetail ({imgurl, name, salida, price}) {
+    
 
     return(
 <div className="main">

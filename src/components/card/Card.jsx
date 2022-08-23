@@ -1,22 +1,30 @@
-
-import "./Card.css";
 import Button from "../Button/Button";
-export default function Card ({imgurl, name, salida, price}) {
-    
+import "./card.css";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
-    return(
-<div className="main">
+function Card({ id, title, moneda, price, img, category, stock }) {
+  return (
     <div className="card">
-        <div>
-            <img src={imgurl} alt="imagen"/>
-        </div>
-        <div className="card-detail">
-            <h2>{name}</h2>
-            <p>{salida}</p>
-            <h3>$ {price}</h3>
-            <Button text="Reservar"/>
-        </div>    
+      <div className="card-img">
+        <img src={img} alt="imagen" />
+      </div>
+      <div className="card-detail">
+        <h2>{title}</h2>
+        <p>{category}</p>
+        <h3>{moneda} {price}</h3>
+        {/* Crear un LINK para navegar al detalle del producto */}
+
+        <Link to={`/detalle/${id}`}>
+          <Button
+            /* onTouch={() => alert(`Clickeado el item: ${title}`)} */
+            text="Ver más"
+          ></Button>
+        </Link>       
+        
+      </div>
     </div>
-</div>
-    )
+  );
 }
+
+export default Card;

@@ -1,7 +1,16 @@
 import "./button.css";
 
-export default function Button ({text}) {
+function Button({ text, type, onTouch }) {
+
+  const btnstyle = {
+    backgroundColor: type === "alert" ? "red" : "green",
+  };
+
   return (
-    <button className="btn">{text}</button>
-  )
+    <button onClick={onTouch} style={btnstyle} className="btn">
+      {text}
+    </button>
+  );
 }
+
+export default Button;

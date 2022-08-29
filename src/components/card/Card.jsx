@@ -3,7 +3,7 @@ import "./card.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
-function Card({ id, title, moneda, price, img, category, stock }) {
+function Card({ id, title, price, moneda, descripcion, img, category, stock }) {
   return (
     <div className="card">
       <div className="card-img">

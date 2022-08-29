@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
 
 function ItemCount(props) {
   const [count, setCount] = useState(props.initial);
@@ -13,11 +14,14 @@ function ItemCount(props) {
 
   return (
     <>
-      <h3>Disponible AHORA</h3>
-      <button onClick={handleDecrement}>-</button>
-      <span>{count}</span>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={()=>props.onAdd(count)}>Reserva</button>
+      
+      <Button type="alert" onTouch={handleDecrement}>
+        -
+      </Button>
+      <strong>{count}</strong>
+      <Button onTouch={handleIncrement}>+</Button>
+      <br />
+      <Button onTouch={() => props.onAdd(count)}>Hacer Reserva</Button>
     </>
   );
 }

@@ -7,12 +7,12 @@ function Card(props) {
   return (
     <div className="card">
       <div className="card-img">
-        <img src={props.data.imgurl} alt="imagen" />
+        <img src={props.data.img} alt="imagen" />
       </div>
       <div className="card-detail">
-        <h2>{props.data.name}</h2>
-        <p>{props.data.description}</p>
-        <h3>U$D {props.data.price}</h3>
+        <h2>{props.data.title}</h2>
+        <p>{props.data.descripcion}</p>
+        <h3>{props.data.moneda} {props.data.price}</h3>
         <Button text="Ver más" />
       </div>
     </div>

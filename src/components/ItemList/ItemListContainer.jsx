@@ -1,19 +1,45 @@
 import React, { useState, useEffect } from "react";
-import data from "../../data/data";
 import Card from "../Card/Card";
 import { Metronome } from "@uiball/loaders";
 
-function traerProductos() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(data), 1500);
+import firestoreDB from "../../services/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore";
+
+/* 1. todos los items */
+const getItemsFromDB = () => {
+  return new Promise((resolve) => {
+    const todosCollection = collection(firestoreDB, "Viajes");
+
+    getDocs(todosCollection).then((snapshot) => {
+      const docsData = snapshot.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+      resolve(docsData);
+    });
   });
-}
+};
+
+/* 2. Items segun categoria  */
+const getItemsFromDBbyCategory = (category) => {
+  return new Promise((resolve) => {
+    const todosCollectionRef = collection(firestoreDB, "Viajes");
+
+    const q = query(todosCollectionRef, where("category", "==", category));
+
+    getDocs(q).then((snapshot) => {
+      const docsData = snapshot.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+      resolve(docsData);
+    });
+  });
+};
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    traerProductos()
+    getItemsFromDB()
       .then((respuesta) => {
         setProducts(respuesta);
       })
@@ -40,8 +66,9 @@ const ItemListContainer = () => {
             key={item.id}
             id={item.id}
             title={item.title}
-            moneda={item.moneda}
             price={item.price}
+            moneda={item.moneda}
+            descripcion={item.descripcion}
             category={item.category}
             img={item.img}
             stock={item.stock}

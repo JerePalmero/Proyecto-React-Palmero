@@ -3,34 +3,29 @@ import { Link } from 'react-router-dom';
 
 
 
-const Item = ({ id,title, img,name, category, moneda, price}) => {
+const Item = ({ id,title, img, category, moneda, price}) => {
   
 
   
     return (
         
         
-      <article className="CardItem">
-      <picture>
-         <img src={img} alt={name} className="ItemImg"/>
-     </picture>
-     <div className='container'>
-     <header className="Header">
-         <h2 className="ItemHeader">
-             {category}
-         </h2>
-     </header>
-    
-     <section>
-         <p className="Info">
-             Precio: ${price}
-         </p>
-     </section>           
-     <footer className='ItemFooter'>
-         <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
-     </footer>
-     </div>
- </article>
+        <div className="CardItem">
+            <p>{category}</p>
+            
+          <div className="card-img">
+        <img src={img} alt="imagen" className='ItemImg' />
+      </div>
+      <div className="card-detail">
+        
+        
+      <h3>{title}</h3>
+        <h3>{moneda} {price}</h3>     
+            
+               <button className='ButtonDetai'><Link className='ButtonDetai' to={`/detail/${id}`}>Ver detalle</Link></button>
+            
+            </div>
+        </div>
     )
 }
 

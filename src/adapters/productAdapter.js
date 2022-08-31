@@ -3,11 +3,12 @@ export const createAdaptedProductFromFirestore = (doc) => {
 
     const productAdapted = {
         id: doc.id,
-        name: data.name,
+        title: data.title,
         img: data.img,
         price: data.price,
+        moneda: data.moneda,
         category: data.category,
-        description: data.description
+        descripcion: data.descripcion
     }
 
     return productAdapted

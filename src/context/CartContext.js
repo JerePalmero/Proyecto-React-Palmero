@@ -29,10 +29,20 @@ export const CartContextProvider = ({ children }) => {
         countRendersRef.current++
     }, [cart])
 
+
+
+
+
     const addItem = (productToAdd) => {
         if(!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd])
         } else {
+            const inCart = cart.find (prod => prod.id === productToAdd.id);
+            inCart.quantity +=productToAdd.quantity;
+            setCart([...cart])
+            
+            
+            /*
             const cartUpdated = cart.map(prod => {
                 if(prod.id === productToAdd.id) {
                     const productUpdated = {
@@ -46,7 +56,7 @@ export const CartContextProvider = ({ children }) => {
             })
 
             setCart(cartUpdated)
-        }
+       */ }
     }
 
     // const getQuantity = () => {

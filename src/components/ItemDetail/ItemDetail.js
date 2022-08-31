@@ -6,6 +6,7 @@ import { CartContext } from '../../context/CartContext'
 import NotificationContext from '../../notification/Notification'
 
 const ItemDetail = ({ id, title, img, category, descripcion, moneda, price, stock }) => {
+   
     const [quantity, setQuantity] = useState(0)
 
     const { addItem, getProductQuantity } = useContext(CartContext)

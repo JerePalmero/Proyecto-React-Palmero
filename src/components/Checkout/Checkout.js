@@ -10,7 +10,7 @@ import './Checkout.css'
 
 const Checkout = () => {
     const { cart, clearCart, total } = useContext(CartContext)  
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const MySwal = withReactContent(Swal)
 
     const createOrder = async (data) => {
@@ -18,8 +18,8 @@ const Checkout = () => {
         try {
             const objOrder = {
                 buyer: {
-                    name: data.firstName,
-                    lastName: data.LastName,
+                    name: data.Name,
+                    phone: data.Telefono,
                   mail: data.mail
                 },
                 items: cart,
@@ -54,7 +54,7 @@ const Checkout = () => {
             })
 
             if(outOfStock.length === 0) {
-                const orderRef = collection(db, 'Ordenes')
+                const orderRef = collection(db, 'orders')
                 const orderAdded = await addDoc(orderRef, objOrder)
                 batch.commit()
                 new MySwal({
@@ -76,23 +76,22 @@ const Checkout = () => {
 
     }
 
+
     return (
         <div className="containerForm">
 
         <form onSubmit={handleSubmit(createOrder)}>
            
-            <input defaultValue="Tu nombre" {...register("firstName")} />
+            <input placeholder="Tu nombre" {...register("Name")} />
             
-            <input defaultValue="Tu apellido" {...register("LastName")} />
-            <input defaultValue="Tu mail" {...register("mail")} />
+            <input placeholder="Tu Telefono" {...register("Telefono")} />
+            <input placeholder="Tu mail" {...register("mail")} />
             
             <input type="submit" />
             </form>
 
-{/* 
-            <h1>Checkout</h1>
-            <h2>Formulario</h2>
-            <button className="Button" onClick={createOrder}>Generar Orden</button> */}
+
+
         </div>
     )
 }
